@@ -149,7 +149,7 @@ export const HOW_IT_WORKS_STEPS = [
   },
 ];
 
-// 11 Countries for Destination Showcase (AdmitKard structural recreation)
+// 10 Countries for Destination Showcase
 export const DESTINATIONS = [
   {
     name: "United States",
@@ -231,28 +231,20 @@ export const DESTINATIONS = [
     popularUniversities: "Auckland, Otago, Victoria",
     whatsappQuery: "Hello SJ Consultants, I am interested in studying in New Zealand. Please guide me about the available opportunities.",
   },
-  {
-    name: "UAE",
-    flag: "🇦🇪",
-    flagImg: "/assets/flags/ae.png",
-    code: "UAE",
-    popularUniversities: "Khalifa, UAEU, AUS Sharjah",
-    whatsappQuery: "Hello SJ Consultants, I am interested in studying in UAE. Please guide me about the available opportunities.",
-  },
 ];
 
-// Top Global Universities Showcase (AdmitKard reference)
+// Top Global Universities Showcase (AdmitKard reference with authentic logo assets)
 export const TOP_UNIVERSITIES_SHOWCASE = [
-  { name: "Harvard University", country: "USA", flag: "🇺🇸" },
-  { name: "MIT", country: "USA", flag: "🇺🇸" },
-  { name: "Stanford University", country: "USA", flag: "🇺🇸" },
-  { name: "University of Oxford", country: "UK", flag: "🇬🇧" },
-  { name: "University of Cambridge", country: "UK", flag: "🇬🇧" },
-  { name: "Imperial College London", country: "UK", flag: "🇬🇧" },
-  { name: "University of Toronto", country: "Canada", flag: "🇨🇦" },
-  { name: "University of Melbourne", country: "Australia", flag: "🇦🇺" },
-  { name: "National University of Singapore", country: "Singapore", flag: "🇸🇬" },
-  { name: "Trinity College Dublin", country: "Ireland", flag: "🇮🇪" },
+  { name: "Harvard University", country: "USA", flag: "🇺🇸", logo: "/assets/universities/harvard.svg" },
+  { name: "MIT", country: "USA", flag: "🇺🇸", logo: "/assets/universities/mit.svg" },
+  { name: "Stanford University", country: "USA", flag: "🇺🇸", logo: "/assets/universities/stanford.svg" },
+  { name: "University of Oxford", country: "UK", flag: "🇬🇧", logo: "/assets/universities/oxford.svg" },
+  { name: "University of Cambridge", country: "UK", flag: "🇬🇧", logo: "/assets/universities/cambridge.svg" },
+  { name: "Imperial College London", country: "UK", flag: "🇬🇧", logo: "/assets/universities/imperial.svg" },
+  { name: "University of Toronto", country: "Canada", flag: "🇨🇦", logo: "/assets/universities/toronto.svg" },
+  { name: "University of Melbourne", country: "Australia", flag: "🇦🇺", logo: "/assets/universities/melbourne.svg" },
+  { name: "National University of Singapore", country: "Singapore", flag: "🇸🇬", logo: "/assets/universities/nus.svg" },
+  { name: "Trinity College Dublin", country: "Ireland", flag: "🇮🇪", logo: "/assets/universities/trinity.svg" },
 ];
 
 export const TESTIMONIAL_PLACEHOLDERS = [

@@ -69,7 +69,7 @@ export default function FounderSection() {
             </div>
 
             <div className="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-2xs text-center hover:border-[#102A43]/30 transition-all">
-              <div className="text-2xl sm:text-3xl font-extrabold text-[#102A43] tracking-tight">11+</div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-[#102A43] tracking-tight">10+</div>
               <div className="text-xs font-bold text-[#102A43] mt-0.5">Destinations</div>
               <div className="text-[11px] text-slate-400">Global Study Hubs</div>
             </div>

@@ -1,18 +1,25 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
 import { 
   Star, 
   Quote, 
   CheckCircle2, 
-  Sparkles,
-  Info,
-  ShieldCheck,
-  Award,
-  Users
+  Sparkles, 
+  Info, 
+  ShieldCheck, 
+  Award, 
+  Users, 
+  ChevronDown 
 } from 'lucide-react';
 import { TESTIMONIAL_PLACEHOLDERS } from '../data/consultancyData';
 
 export default function TestimonialsSection() {
+  const [showAllReviews, setShowAllReviews] = useState(false);
+
+  // Initially display only 2 reviews; reveal remaining when "Load More Reviews" is clicked
+  const visibleReviews = showAllReviews 
+    ? TESTIMONIAL_PLACEHOLDERS 
+    : TESTIMONIAL_PLACEHOLDERS.slice(0, 2);
+
   return (
     <section id="testimonials" className="py-14 sm:py-16 md:py-20 bg-[#F5F7FA] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,9 +46,9 @@ export default function TestimonialsSection() {
           </div>
         </div>
 
-        {/* Compact Static Testimonial Grid: 3 cols on desktop, 2 on tablet, 1 on mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-4.5">
-          {TESTIMONIAL_PLACEHOLDERS.map((item) => (
+        {/* Compact Static Testimonial Grid: 2 initially (or 3 cols when expanded) */}
+        <div className={`grid grid-cols-1 md:grid-cols-2 ${showAllReviews ? 'lg:grid-cols-3' : 'max-w-4xl mx-auto'} gap-4 sm:gap-4.5`}>
+          {visibleReviews.map((item) => (
             <div
               key={item.id}
               className="group bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-2xs hover:shadow-md transition-all duration-300 flex flex-col justify-between hover:-translate-y-0.5 hover:border-[#176B87]/30 relative"
@@ -105,6 +112,24 @@ export default function TestimonialsSection() {
           ))}
         </div>
 
+        {/* Load More Reviews Button */}
+        <div className="mt-7 text-center">
+          <button
+            type="button"
+            onClick={() => setShowAllReviews(!showAllReviews)}
+            className="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-[#102A43] hover:text-[#176B87] border border-slate-300 font-semibold text-xs sm:text-sm px-6 py-2.5 rounded-full shadow-2xs hover:shadow-xs hover:border-[#176B87]/50 transition-all duration-200 cursor-pointer"
+          >
+            <span>
+              {showAllReviews ? 'Show Fewer Reviews' : `Load More Reviews (${TESTIMONIAL_PLACEHOLDERS.length - 2} more)`}
+            </span>
+            <ChevronDown
+              className={`w-4 h-4 transition-transform duration-200 ${
+                showAllReviews ? 'rotate-180 text-[#176B87]' : 'text-slate-500'
+              }`}
+            />
+          </button>
+        </div>
+
         {/* Compact Trust Badges Strip */}
         <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto">
           <div className="bg-white p-3 sm:p-3.5 rounded-xl border border-slate-200/80 text-center shadow-2xs">
@@ -124,7 +149,7 @@ export default function TestimonialsSection() {
           </div>
           <div className="bg-white p-3 sm:p-3.5 rounded-xl border border-slate-200/80 text-center shadow-2xs">
             <Sparkles className="w-4 h-4 text-[#D6AD60] mx-auto mb-1" />
-            <div className="text-base sm:text-lg font-extrabold text-[#102A43]">11+ Key</div>
+            <div className="text-base sm:text-lg font-extrabold text-[#102A43]">10+ Key</div>
             <div className="text-[11px] text-[#64748B]">Destinations</div>
           </div>
         </div>

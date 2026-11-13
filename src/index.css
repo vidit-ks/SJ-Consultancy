@@ -136,11 +136,26 @@ h1, h2, h3, h4, h5, h6 {
   animation: solar-orbit-clockwise 44s linear infinite;
 }
 
+/* Continuous Logo Marquee for Mobile University Showcase */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee-scroll 24s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-orbit-inner,
   .animate-counter-inner,
   .animate-orbit-outer,
   .animate-counter-outer,
+  .animate-marquee,
   .animate-float-slow,
   .animate-float-delayed,
   .animate-pulse-subtle {

@@ -1,12 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Quote, 
-  CheckCircle, 
+  CheckCircle2, 
   MessageCircle, 
   Award, 
   Users, 
-  ArrowRight 
+  ShieldCheck, 
+  Sparkles,
+  ArrowRight,
+  Compass
 } from 'lucide-react';
 import { BRAND } from '../data/consultancyData';
 
@@ -14,184 +16,174 @@ export default function FounderSection() {
   const whatsappFounderMsg = "Hello Shovik sir, I would like to consult with you regarding overseas education opportunities.";
   const founderChatUrl = BRAND.whatsapp.getUrl(whatsappFounderMsg);
 
+  // AdmitKard credibility highlights
+  const credibilityHighlights = [
+    "6+ Years of Industry Experience",
+    "1,000+ Students Guided",
+    "Personalised Education Guidance",
+    "Trust & Transparency"
+  ];
+
   return (
-    <section id="about" className="py-10 sm:py-14 md:py-16 bg-[#F5F7FA]/60 relative overflow-hidden">
-      {/* Background subtle decoration */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-white/60 -skew-x-6 transform origin-top pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-72 h-72 bg-[#176B87]/5 rounded-full blur-3xl pointer-events-none" />
+    <section id="about" className="py-16 md:py-24 bg-[#F5F7FA] relative overflow-hidden">
+      {/* Decorative ambient background accents */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#176B87]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-10 w-80 h-80 bg-[#D6AD60]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Split Grid: Photo on one side, Intro on the other */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          
-          {/* Founder Image Column */}
-          <motion.div 
-            className="lg:col-span-5 flex justify-center"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="relative w-full max-w-[340px] sm:max-w-[370px]">
+        {/* A. Section Heading (AdmitKard structure) */}
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#102A43]/5 border border-[#176B87]/20 text-[#102A43] text-xs font-bold uppercase tracking-wider mb-3">
+            <Sparkles className="w-3.5 h-3.5 text-[#D6AD60]" />
+            <span>Built on Trust</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#102A43] tracking-tight leading-tight">
+            Built on Trust, Backed by Experience
+          </h2>
+          <p className="mt-3.5 text-sm sm:text-base md:text-lg text-[#64748B] leading-relaxed">
+            6+ years of expertise, 1,000+ students guided, and an unwavering commitment to authentic student guidance.
+          </p>
+        </div>
+
+        {/* E. Statistics Section (Horizontal statistics strip similar to AdmitKard) */}
+        <div className="mb-10 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+            <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-2xs text-center">
+              <div className="text-2xl sm:text-3xl font-extrabold text-[#102A43] tracking-tight">6+</div>
+              <div className="text-xs sm:text-[13px] font-semibold text-[#176B87] mt-0.5">Years Experience</div>
+              <div className="text-[11px] text-slate-400 mt-0.5">Education Industry</div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-2xs text-center">
+              <div className="text-2xl sm:text-3xl font-extrabold text-[#102A43] tracking-tight">1,000+</div>
+              <div className="text-xs sm:text-[13px] font-semibold text-[#176B87] mt-0.5">Students Guided</div>
+              <div className="text-[11px] text-slate-400 mt-0.5">Global Education</div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-2xs text-center">
+              <div className="text-2xl sm:text-3xl font-extrabold text-[#102A43] tracking-tight">100%</div>
+              <div className="text-xs sm:text-[13px] font-semibold text-[#176B87] mt-0.5">Transparency</div>
+              <div className="text-[11px] text-slate-400 mt-0.5">Direct & Honest Advice</div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-2xs text-center">
+              <div className="text-2xl sm:text-3xl font-extrabold text-[#102A43] tracking-tight">11+</div>
+              <div className="text-xs sm:text-[13px] font-semibold text-[#176B87] mt-0.5">Destinations</div>
+              <div className="text-[11px] text-slate-400 mt-0.5">World-Class Options</div>
+            </div>
+          </div>
+        </div>
+
+        {/* B. Founder Card (Recreating AdmitKard's Card Composition from photo 2.jpeg) */}
+        <motion.div 
+          className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-slate-200/90 shadow-xl max-w-5xl mx-auto relative overflow-hidden"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            
+            {/* Left Column: Compact Founder Bio & Credibility Highlights (7 cols) */}
+            <div className="lg:col-span-7 text-left order-2 lg:order-1">
               
-              {/* Offset decorative border/backdrop card */}
-              <div className="absolute -inset-3 bg-gradient-to-tr from-[#102A43] via-[#176B87] to-[#D6AD60] rounded-3xl opacity-15 -rotate-2 transform pointer-events-none" />
-              <div className="absolute inset-0 bg-[#102A43] rounded-3xl shadow-lg transform rotate-1 pointer-events-none" />
+              {/* Founder Introduction Label */}
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#102A43]/5 text-[#102A43] text-xs font-bold uppercase tracking-wider mb-3">
+                <Compass className="w-3.5 h-3.5 text-[#176B87]" />
+                <span>Founder Introduction</span>
+              </div>
 
-              {/* Founder Image Container - Balanced Portrait Ratio */}
-              <div className="relative rounded-2xl overflow-hidden bg-slate-900 shadow-xl border-2 border-white/20 aspect-4/5">
-                <img
-                  src={BRAND.founder.image}
-                  alt="Shovik Julka - Founder & CEO of SJ Consultants"
-                  className="w-full h-full object-cover object-top filter brightness-100 contrast-[1.02] transform transition-transform duration-500 hover:scale-[1.02]"
-                  loading="lazy"
-                />
+              {/* Founder Name & Designation */}
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#102A43] tracking-tight mb-1">
+                {BRAND.founder.name}
+              </h3>
+              <p className="text-sm font-semibold text-[#176B87] mb-0.5">
+                {BRAND.founder.role}
+              </p>
+              <p className="text-xs text-[#64748B] mb-5">
+                {BRAND.founder.title}
+              </p>
 
-                {/* Bottom Overlay for Name & Title */}
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#102A43] via-[#102A43]/75 to-transparent p-5 text-white text-left">
-                  <div className="text-lg sm:text-xl font-bold tracking-tight text-white flex items-center justify-between">
-                    <span>{BRAND.founder.name}</span>
-                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#D6AD60] text-[#102A43] font-bold">
-                      Founder
+              {/* Compact Founder Introduction (60-90 words, 10-15 seconds read) */}
+              <p className="text-sm sm:text-[14.5px] text-slate-700 leading-relaxed mb-6 font-normal">
+                With over 6 years of experience in the education and overseas consultancy industry, I have had the privilege of guiding 1,000+ students towards their international education dreams. Studying abroad is about finding the right university, making informed decisions, and preparing for a rewarding global career. Through SJ Consultants, my mission is simple: to make overseas education guidance deeply personal, 100% transparent, and accessible to every student and family.
+              </p>
+
+              {/* C. Founder Credibility Highlights (AdmitKard-style checklist) */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-6 pt-4 border-t border-slate-100">
+                {credibilityHighlights.map((item) => (
+                  <div key={item} className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#176B87] shrink-0" />
+                    <span className="text-xs sm:text-[13px] font-semibold text-[#102A43]">
+                      {item}
                     </span>
                   </div>
-                  <p className="text-xs text-[#D6AD60] font-semibold mt-0.5">
-                    {BRAND.founder.role}
-                  </p>
-                  <p className="text-[11px] text-slate-300 mt-0.5">
-                    {BRAND.founder.title}
-                  </p>
-                </div>
+                ))}
               </div>
 
-              {/* Floating Stat Card 1: Experience */}
-              <div className="absolute -top-3 -right-3 sm:-right-4 bg-white/95 backdrop-blur-md px-3 py-2 rounded-xl shadow-lg border border-slate-200/80 flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-[#176B87]/10 flex items-center justify-center text-[#176B87]">
-                  <Award className="w-4 h-4 text-[#176B87]" />
-                </div>
-                <div>
-                  <div className="text-xs sm:text-sm font-extrabold text-[#102A43]">6+ Years</div>
-                  <div className="text-[10px] text-[#64748B] font-medium leading-none">Experience</div>
-                </div>
-              </div>
-
-              {/* Floating Stat Card 2: Students Guided */}
-              <div className="absolute -bottom-3 -left-3 sm:-left-4 bg-[#102A43] text-white px-3.5 py-2 rounded-xl shadow-lg border border-white/10 flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-[#D6AD60]/20 flex items-center justify-center text-[#D6AD60]">
-                  <Users className="w-4 h-4 text-[#D6AD60]" />
-                </div>
-                <div>
-                  <div className="text-xs sm:text-sm font-extrabold text-white">1,000+</div>
-                  <div className="text-[10px] text-slate-300 font-medium leading-none">Students Guided</div>
-                </div>
-              </div>
-
-            </div>
-          </motion.div>
-
-          {/* Founder Introduction Text Column - Refined & Balanced Typography */}
-          <motion.div 
-            className="lg:col-span-7 text-left"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.5 }}
-          >
-            {/* Header info */}
-            <div className="flex items-center gap-3 mb-3.5">
-              <span className="p-1.5 rounded-lg bg-[#176B87]/10 text-[#176B87]">
-                <Quote className="w-5 h-5 rotate-180" />
-              </span>
-              <div>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-[#102A43]">
-                  {BRAND.founder.name}
-                </h3>
-                <p className="text-xs sm:text-sm font-semibold text-[#176B87]">
-                  {BRAND.founder.role}
-                </p>
-                <p className="text-[11px] text-[#64748B]">
-                  {BRAND.founder.title}
-                </p>
+              {/* WhatsApp CTA Action */}
+              <div className="pt-2">
+                <a
+                  href={founderChatUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 bg-[#102A43] hover:bg-[#176B87] text-white text-xs sm:text-sm font-semibold px-5 py-3 rounded-full transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5"
+                >
+                  <MessageCircle className="w-4 h-4 text-[#25D366]" />
+                  <span>Consult with Shovik Julka on WhatsApp</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#D6AD60]" />
+                </a>
               </div>
             </div>
 
-            {/* Complete, refined introduction text */}
-            <div className="space-y-2.5 text-slate-700 text-xs sm:text-sm leading-relaxed">
-              <p className="font-semibold text-[#102A43]">
-                "I'm Shovik Julka, Founder and CEO of SJ Consultants, with over 6 years of experience in the education and overseas consultancy industry.
-              </p>
+            {/* Right Column: Founder Photograph (5 cols, balanced ratio) */}
+            <div className="lg:col-span-5 order-1 lg:order-2 flex justify-center">
+              <div className="relative w-full max-w-[280px] sm:max-w-[320px]">
+                
+                {/* Background offset card */}
+                <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-[#102A43] via-[#176B87] to-[#D6AD60] opacity-15 rotate-1 pointer-events-none" />
 
-              <p>
-                Over the years, I have had the opportunity to work closely with students and families, helping them take one of the most important decisions of their lives – choosing the right education and building a future abroad.
-              </p>
-
-              <p>
-                Having guided 1,000+ students towards their international education journeys, I understand that studying abroad is about much more than getting an admission letter. It's about finding the right university, choosing the right course, making informed decisions and preparing for a completely new chapter in life.
-              </p>
-
-              <p>
-                My journey in this industry has taught me the importance of trust, transparency and personal guidance. These are the values I want SJ Consultants to stand for.
-              </p>
-
-              <p>
-                Through SJ Consultants, my aim is simple: to make overseas education guidance more personal, transparent and accessible, so that every student and parent feels confident throughout the journey.
-              </p>
-
-              <p>
-                I believe in building relationships, creating opportunities and helping people turn their ambitions into reality.
-              </p>
-
-              {/* Callout Quote */}
-              <div className="p-3 sm:p-3.5 rounded-xl bg-gradient-to-r from-[#102A43]/5 via-[#176B87]/5 to-transparent border-l-3 border-[#D6AD60] my-3">
-                <p className="text-xs sm:text-sm font-bold text-[#102A43] italic">
-                  "Because every student has a dream, and the right guidance can make all the difference."
-                </p>
-              </div>
-            </div>
-
-            {/* Key Value Points */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 my-4 pt-3 border-t border-slate-200/70">
-              <div className="flex items-start gap-2">
-                <CheckCircle className="w-3.5 h-3.5 text-[#176B87] shrink-0 mt-0.5" />
-                <span className="text-xs font-semibold text-slate-800">1-on-1 Mentorship</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <CheckCircle className="w-3.5 h-3.5 text-[#176B87] shrink-0 mt-0.5" />
-                <span className="text-xs font-semibold text-slate-800">100% Ethical Advice</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <CheckCircle className="w-3.5 h-3.5 text-[#176B87] shrink-0 mt-0.5" />
-                <span className="text-xs font-semibold text-slate-800">End-to-End Handholding</span>
-              </div>
-            </div>
-
-            {/* Signature & CTA Area */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
-              <div>
-                <div className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#102A43] italic">
-                  Shovik Julka
+                {/* Portrait Image Container */}
+                <div className="relative rounded-2xl overflow-hidden bg-slate-900 shadow-lg border border-slate-200 aspect-4/5">
+                  <img
+                    src={BRAND.founder.image}
+                    alt="Shovik Julka - Founder & CEO of SJ Consultants"
+                    className="w-full h-full object-cover object-top filter brightness-100 contrast-[1.02] hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  {/* Subtle lower gradient overlay with badge */}
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#102A43]/90 via-[#102A43]/40 to-transparent p-4 text-white text-left">
+                    <div className="text-sm font-bold text-white">Shovik Julka</div>
+                    <div className="text-[11px] text-[#D6AD60]">Founder &amp; CEO | SJ Consultants</div>
+                  </div>
                 </div>
-                <div className="text-[11px] text-[#64748B] font-medium">
-                  Founder &amp; CEO | SJ Consultants
+
+                {/* Floating pill badge */}
+                <div className="absolute -top-3 -right-3 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl shadow-md border border-slate-200/80 flex items-center gap-1.5 text-xs font-bold text-[#102A43]">
+                  <Award className="w-4 h-4 text-[#D6AD60]" />
+                  <span>6+ Years Exp</span>
                 </div>
               </div>
-
-              <a
-                href={founderChatUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#102A43] hover:bg-[#176B87] text-white text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5"
-              >
-                <MessageCircle className="w-4 h-4 text-[#25D366]" />
-                <span>Consult with Shovik Julka</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#D6AD60]" />
-              </a>
             </div>
 
-          </motion.div>
+          </div>
 
-        </div>
+          {/* D. Institutional & Advisory Credentials Showcase (Configurable for verified assets) */}
+          <div className="mt-8 pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4 text-xs text-[#64748B]">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-[#176B87]" />
+              <span className="font-semibold text-[#102A43]">SJ Advisory Standards:</span>
+            </div>
+            <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-[11px] sm:text-xs">
+              <span className="px-2.5 py-1 rounded-md bg-slate-100 font-medium text-slate-700">100% Ethical Advisory</span>
+              <span className="px-2.5 py-1 rounded-md bg-slate-100 font-medium text-slate-700">Profile-First Shortlisting</span>
+              <span className="px-2.5 py-1 rounded-md bg-slate-100 font-medium text-slate-700">Transparent Visa Protocols</span>
+              <span className="px-2.5 py-1 rounded-md bg-slate-100 font-medium text-slate-700">Zero Hidden Charges</span>
+            </div>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );

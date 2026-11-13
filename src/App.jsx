@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
-import LeadershipHighlight from './components/LeadershipHighlight';
 import FounderSection from './components/FounderSection';
 import ServicesSection from './components/ServicesSection';
 import HowItWorksSection from './components/HowItWorksSection';
@@ -21,10 +20,7 @@ export default function App() {
         {/* Section 1: Hero / Landing */}
         <HeroSection />
 
-        {/* Leadership Highlight Section Bridge */}
-        <LeadershipHighlight />
-
-        {/* Section 2: Founder Introduction (About Us) */}
+        {/* Section 2: About Us / Founder Section (AdmitKard structural recreation) */}
         <FounderSection />
 
         {/* Section 3: End-to-End Services */}
@@ -33,10 +29,10 @@ export default function App() {
         {/* Section 4: How It Works */}
         <HowItWorksSection />
 
-        {/* Section 5: Trusted by Students (Testimonials) */}
+        {/* Section 5: Trusted by Students (Testimonials Wall) */}
         <TestimonialsSection />
 
-        {/* Section 6: The World of Opportunities (Destinations) */}
+        {/* Section 6: Destinations (AdmitKard country cards & university showcase) */}
         <DestinationsSection />
 
         {/* Final Conversion CTA Section */}

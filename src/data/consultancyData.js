@@ -149,32 +149,30 @@ export const HOW_IT_WORKS_STEPS = [
   },
 ];
 
+// 11 Countries for Destination Showcase (AdmitKard structural recreation)
 export const DESTINATIONS = [
-  {
-    name: "United Kingdom",
-    flag: "🇬🇧",
-    flagImg: "/assets/flags/gb.png",
-    code: "UK",
-    accentColor: "hover:border-[#102A43] hover:shadow-[#102A43]/10",
-    badgeColor: "bg-[#102A43]/5 text-[#102A43]",
-    whatsappQuery: "Hello SJ Consultants, I am interested in studying in United Kingdom. Please guide me about the available opportunities.",
-  },
   {
     name: "United States",
     flag: "🇺🇸",
     flagImg: "/assets/flags/us.png",
     code: "USA",
-    accentColor: "hover:border-red-900/40 hover:shadow-red-900/5",
-    badgeColor: "bg-red-900/5 text-red-950",
+    popularUniversities: "Harvard, MIT, Stanford",
     whatsappQuery: "Hello SJ Consultants, I am interested in studying in United States. Please guide me about the available opportunities.",
+  },
+  {
+    name: "United Kingdom",
+    flag: "🇬🇧",
+    flagImg: "/assets/flags/gb.png",
+    code: "UK",
+    popularUniversities: "Oxford, Cambridge, Imperial",
+    whatsappQuery: "Hello SJ Consultants, I am interested in studying in United Kingdom. Please guide me about the available opportunities.",
   },
   {
     name: "Canada",
     flag: "🇨🇦",
     flagImg: "/assets/flags/ca.png",
     code: "CAN",
-    accentColor: "hover:border-red-700/40 hover:shadow-red-700/5",
-    badgeColor: "bg-red-700/5 text-red-900",
+    popularUniversities: "Toronto, McGill, UBC",
     whatsappQuery: "Hello SJ Consultants, I am interested in studying in Canada. Please guide me about the available opportunities.",
   },
   {
@@ -182,8 +180,7 @@ export const DESTINATIONS = [
     flag: "🇦🇺",
     flagImg: "/assets/flags/au.png",
     code: "AUS",
-    accentColor: "hover:border-emerald-700/40 hover:shadow-emerald-700/5",
-    badgeColor: "bg-emerald-700/5 text-emerald-950",
+    popularUniversities: "Melbourne, Sydney, UNSW",
     whatsappQuery: "Hello SJ Consultants, I am interested in studying in Australia. Please guide me about the available opportunities.",
   },
   {
@@ -191,8 +188,7 @@ export const DESTINATIONS = [
     flag: "🇩🇪",
     flagImg: "/assets/flags/de.png",
     code: "GER",
-    accentColor: "hover:border-amber-700/40 hover:shadow-amber-700/5",
-    badgeColor: "bg-amber-700/5 text-amber-950",
+    popularUniversities: "TU Munich, Heidelberg, RWTH Aachen",
     whatsappQuery: "Hello SJ Consultants, I am interested in studying in Germany. Please guide me about the available opportunities.",
   },
   {
@@ -200,28 +196,63 @@ export const DESTINATIONS = [
     flag: "🇮🇪",
     flagImg: "/assets/flags/ie.png",
     code: "IRL",
-    accentColor: "hover:border-green-700/40 hover:shadow-green-700/5",
-    badgeColor: "bg-green-700/5 text-green-950",
+    popularUniversities: "Trinity College, UCD, Galway",
     whatsappQuery: "Hello SJ Consultants, I am interested in studying in Ireland. Please guide me about the available opportunities.",
-  },
-  {
-    name: "New Zealand",
-    flag: "🇳🇿",
-    flagImg: "/assets/flags/nz.png",
-    code: "NZ",
-    accentColor: "hover:border-teal-700/40 hover:shadow-teal-700/5",
-    badgeColor: "bg-teal-700/5 text-teal-950",
-    whatsappQuery: "Hello SJ Consultants, I am interested in studying in New Zealand. Please guide me about the available opportunities.",
   },
   {
     name: "France",
     flag: "🇫🇷",
     flagImg: "/assets/flags/fr.png",
     code: "FRA",
-    accentColor: "hover:border-blue-700/40 hover:shadow-blue-700/5",
-    badgeColor: "bg-blue-700/5 text-blue-950",
+    popularUniversities: "Sorbonne, HEC Paris, Polytechnique",
     whatsappQuery: "Hello SJ Consultants, I am interested in studying in France. Please guide me about the available opportunities.",
   },
+  {
+    name: "Singapore",
+    flag: "🇸🇬",
+    flagImg: "/assets/flags/sg.png",
+    code: "SGP",
+    popularUniversities: "NUS, NTU, SMU",
+    whatsappQuery: "Hello SJ Consultants, I am interested in studying in Singapore. Please guide me about the available opportunities.",
+  },
+  {
+    name: "Netherlands",
+    flag: "🇳🇱",
+    flagImg: "/assets/flags/nl.png",
+    code: "NLD",
+    popularUniversities: "TU Delft, Amsterdam, Erasmus",
+    whatsappQuery: "Hello SJ Consultants, I am interested in studying in Netherlands. Please guide me about the available opportunities.",
+  },
+  {
+    name: "New Zealand",
+    flag: "🇳🇿",
+    flagImg: "/assets/flags/nz.png",
+    code: "NZL",
+    popularUniversities: "Auckland, Otago, Victoria",
+    whatsappQuery: "Hello SJ Consultants, I am interested in studying in New Zealand. Please guide me about the available opportunities.",
+  },
+  {
+    name: "UAE",
+    flag: "🇦🇪",
+    flagImg: "/assets/flags/ae.png",
+    code: "UAE",
+    popularUniversities: "Khalifa, UAEU, AUS Sharjah",
+    whatsappQuery: "Hello SJ Consultants, I am interested in studying in UAE. Please guide me about the available opportunities.",
+  },
+];
+
+// Top Global Universities Showcase (AdmitKard reference)
+export const TOP_UNIVERSITIES_SHOWCASE = [
+  { name: "Harvard University", country: "USA", flag: "🇺🇸" },
+  { name: "MIT", country: "USA", flag: "🇺🇸" },
+  { name: "Stanford University", country: "USA", flag: "🇺🇸" },
+  { name: "University of Oxford", country: "UK", flag: "🇬🇧" },
+  { name: "University of Cambridge", country: "UK", flag: "🇬🇧" },
+  { name: "Imperial College London", country: "UK", flag: "🇬🇧" },
+  { name: "University of Toronto", country: "Canada", flag: "🇨🇦" },
+  { name: "University of Melbourne", country: "Australia", flag: "🇦🇺" },
+  { name: "National University of Singapore", country: "Singapore", flag: "🇸🇬" },
+  { name: "Trinity College Dublin", country: "Ireland", flag: "🇮🇪" },
 ];
 
 export const TESTIMONIAL_PLACEHOLDERS = [

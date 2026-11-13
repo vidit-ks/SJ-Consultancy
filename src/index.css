@@ -103,37 +103,37 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Solar System Orbital Revolution */
 @keyframes solar-orbit-clockwise {
-  from {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
 
 @keyframes solar-orbit-counter {
-  from {
+  0% {
     transform: rotate(360deg);
   }
-  to {
+  100% {
     transform: rotate(0deg);
   }
 }
 
 .animate-orbit-inner {
-  animation: solar-orbit-clockwise 34s linear infinite;
+  animation: solar-orbit-clockwise 32s linear infinite;
 }
 
 .animate-counter-inner {
-  animation: solar-orbit-counter 34s linear infinite;
+  animation: solar-orbit-counter 32s linear infinite;
 }
 
 .animate-orbit-outer {
-  animation: solar-orbit-counter 46s linear infinite;
+  animation: solar-orbit-counter 44s linear infinite;
 }
 
 .animate-counter-outer {
-  animation: solar-orbit-clockwise 46s linear infinite;
+  animation: solar-orbit-clockwise 44s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

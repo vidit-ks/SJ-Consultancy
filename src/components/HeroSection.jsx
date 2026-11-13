@@ -5,7 +5,6 @@ import {
   MessageCircle, 
   ShieldCheck, 
   GraduationCap, 
-  CheckCircle2, 
   Compass
 } from 'lucide-react';
 import { BRAND } from '../data/consultancyData';
@@ -28,7 +27,7 @@ export default function HeroSection() {
   };
 
   // Solar system orbits:
-  // Inner orbit: 3 countries including India (featured clearly)
+  // Inner orbit: 3 countries including India (prominently featured)
   const innerOrbitCountries = [
     { name: 'India', flagImg: '/assets/flags/in.png', angle: 0, highlight: true },
     { name: 'UK', flagImg: '/assets/flags/gb.png', angle: 120 },
@@ -44,11 +43,11 @@ export default function HeroSection() {
   ];
 
   return (
-    <section id="hero" className="relative pt-24 pb-8 sm:pt-28 sm:pb-12 md:pt-32 md:pb-14 lg:pt-36 lg:pb-16 overflow-hidden bg-gradient-to-b from-slate-50 via-[#F5F7FA] to-white">
+    <section id="hero" className="relative pt-24 pb-10 sm:pt-28 sm:pb-14 md:pt-32 md:pb-16 lg:pt-36 lg:pb-18 overflow-hidden bg-gradient-to-b from-slate-50 via-[#F5F7FA] to-white">
       {/* Decorative ambient background glows */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-tr from-[#176B87]/10 via-[#D6AD60]/10 to-transparent blur-3xl pointer-events-none rounded-full" />
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#176B87]/8 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 -left-32 w-80 h-80 bg-[#102A43]/5 rounded-full blur-2xl pointer-events-none" />
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-tr from-[#176B87]/12 via-[#D6AD60]/12 to-transparent blur-3xl pointer-events-none rounded-full" />
+      <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#176B87]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 -left-32 w-80 h-80 bg-[#102A43]/6 rounded-full blur-2xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
@@ -60,7 +59,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            {/* Introductory Badge - Refined Text */}
+            {/* Introductory Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#102A43]/5 border border-[#176B87]/20 text-[#102A43] text-xs sm:text-sm font-semibold tracking-wide mb-6 shadow-2xs">
               <span className="flex h-2 w-2 rounded-full bg-[#176B87] animate-pulse" />
               <span>Your Personal Guide to Academic Success</span>
@@ -170,7 +169,7 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Right Column: Solar-System-Inspired Planetary Orbit Animation */}
+          {/* Right Column: Solar-System-Inspired Planetary Orbit Animation with clearly visible orbits */}
           <motion.div 
             className="lg:col-span-5 relative flex items-center justify-center py-4"
             initial={{ opacity: 0, scale: 0.95 }}
@@ -180,11 +179,11 @@ export default function HeroSection() {
             {/* Main Solar System Container */}
             <div className="relative w-[310px] h-[310px] sm:w-[380px] sm:h-[380px] md:w-[440px] md:h-[440px] lg:w-[460px] lg:h-[460px] flex items-center justify-center select-none group">
               
-              {/* Outer Orbit Guide Track */}
-              <div className="absolute inset-1 rounded-full border border-slate-200/70 border-dashed pointer-events-none" />
+              {/* Outer Orbit Guide Track - Clearly Visible Gold / Muted Accent with Subtle Glow */}
+              <div className="absolute inset-1 rounded-full border-2 border-dashed border-[#D6AD60]/55 shadow-[0_0_16px_rgba(214,173,96,0.18)] pointer-events-none" />
 
-              {/* Inner Orbit Guide Track */}
-              <div className="absolute inset-12 sm:inset-14 md:inset-16 rounded-full border border-[#176B87]/20 border-dotted pointer-events-none" />
+              {/* Inner Orbit Guide Track - Clearly Visible Teal / Cyan Accent with Subtle Glow */}
+              <div className="absolute inset-12 sm:inset-14 md:inset-16 rounded-full border-2 border-dashed border-[#176B87]/50 shadow-[0_0_14px_rgba(23,107,135,0.16)] pointer-events-none" />
 
               {/* ============================================================== */}
               {/* REVOLVING OUTER ORBIT (4 countries: USA, Canada, Australia, France) */}
@@ -192,7 +191,6 @@ export default function HeroSection() {
               <div className="absolute inset-1 rounded-full animate-orbit-outer hover:[animation-play-state:paused] pointer-events-auto">
                 {outerOrbitCountries.map((c) => {
                   const rad = (c.angle * Math.PI) / 180;
-                  // Position on perimeter of outer container (50% + radius * cos/sin)
                   const radiusPct = 48; // percentage radius
                   const x = 50 + radiusPct * Math.cos(rad);
                   const y = 50 + radiusPct * Math.sin(rad);
@@ -205,7 +203,7 @@ export default function HeroSection() {
                     >
                       {/* Counter-rotation to keep badge upright as the orbit revolves */}
                       <div className="animate-counter-outer hover:[animation-play-state:paused]">
-                        <div className="flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-white/95 backdrop-blur-xs shadow-md border border-slate-200/80 hover:border-[#176B87] hover:shadow-lg transition-all duration-200 cursor-pointer">
+                        <div className="flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-white shadow-md border border-slate-200/90 hover:border-[#D6AD60] hover:shadow-lg transition-all duration-200 cursor-pointer">
                           <img
                             src={c.flagImg}
                             alt={`${c.name} flag`}
@@ -239,10 +237,10 @@ export default function HeroSection() {
                     >
                       {/* Counter-rotation to keep badge upright */}
                       <div className="animate-counter-inner hover:[animation-play-state:paused]">
-                        <div className={`flex items-center gap-1.5 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full backdrop-blur-xs shadow-md transition-all duration-200 cursor-pointer ${
+                        <div className={`flex items-center gap-1.5 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full shadow-md transition-all duration-200 cursor-pointer ${
                           c.highlight 
-                            ? 'bg-gradient-to-r from-amber-50 to-orange-50/80 border-2 border-amber-400/80 shadow-amber-200/40 hover:scale-105' 
-                            : 'bg-white/95 border border-slate-200/80 hover:border-[#176B87]'
+                            ? 'bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-500 shadow-amber-200/50 hover:scale-105' 
+                            : 'bg-white border border-slate-200/90 hover:border-[#176B87]'
                         }`}>
                           <img
                             src={c.flagImg}

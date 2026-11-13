@@ -41,14 +41,10 @@ export default function TestimonialsSection() {
 
         {/* Compact Static Testimonial Grid: 3 cols on desktop, 2 on tablet, 1 on mobile */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-4.5">
-          {TESTIMONIAL_PLACEHOLDERS.map((item, index) => (
-            <motion.div
+          {TESTIMONIAL_PLACEHOLDERS.map((item) => (
+            <div
               key={item.id}
               className="group bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-2xs hover:shadow-md transition-all duration-300 flex flex-col justify-between hover:-translate-y-0.5 hover:border-[#176B87]/30 relative"
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-30px" }}
-              transition={{ duration: 0.3, delay: index * 0.04 }}
             >
               {/* Background quote watermark */}
               <div className="absolute top-3.5 right-3.5 text-slate-100 group-hover:text-slate-200/60 transition-colors pointer-events-none">
@@ -105,7 +101,7 @@ export default function TestimonialsSection() {
                   </span>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 

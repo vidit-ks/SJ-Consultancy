@@ -77,13 +77,7 @@ export default function FounderSection() {
         </div>
 
         {/* Visual & Compact Founder Presentation Card */}
-        <motion.div 
-          className="bg-white rounded-3xl p-6 sm:p-8 md:p-9 border border-slate-200/90 shadow-xl max-w-5xl mx-auto relative overflow-hidden"
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.4 }}
-        >
+        <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-9 border border-slate-200/90 shadow-xl max-w-5xl mx-auto relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-9 items-center">
             
             {/* Left Column: Closer Cropped Founder Photo */}
@@ -176,7 +170,7 @@ export default function FounderSection() {
             </div>
 
           </div>
-        </motion.div>
+        </div>
 
       </div>
     </section>

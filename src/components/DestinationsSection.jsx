@@ -24,20 +24,16 @@ export default function DestinationsSection() {
 
         {/* Compact Country Cards Grid: 4 cols on desktop, 2 on tablet, 2 on mobile */}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 mb-14">
-          {DESTINATIONS.map((dest, index) => {
+          {DESTINATIONS.map((dest) => {
             const whatsappUrl = BRAND.whatsapp.getUrl(dest.whatsappQuery);
 
             return (
-              <motion.a
+              <a
                 key={dest.code}
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative bg-white hover:bg-slate-50/70 rounded-xl p-3 sm:p-4 border border-slate-200/90 shadow-2xs hover:shadow-md transition-all duration-200 flex flex-col justify-between hover:-translate-y-0.5 cursor-pointer select-none"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-20px" }}
-                transition={{ duration: 0.25, delay: index * 0.02 }}
               >
                 <div>
                   {/* Flag & Arrow Top Row */}
@@ -87,7 +83,7 @@ export default function DestinationsSection() {
                     {dest.code}
                   </span>
                 </div>
-              </motion.a>
+              </a>
             );
           })}
         </div>

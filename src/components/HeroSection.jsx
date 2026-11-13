@@ -177,13 +177,13 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
           >
             {/* Main Solar System Container */}
-            <div className="relative w-[310px] h-[310px] sm:w-[380px] sm:h-[380px] md:w-[440px] md:h-[440px] lg:w-[460px] lg:h-[460px] flex items-center justify-center select-none group">
+            <div className="relative w-[300px] h-[300px] min-[390px]:w-[340px] min-[390px]:h-[340px] sm:w-[390px] sm:h-[390px] md:w-[440px] md:h-[440px] lg:w-[470px] lg:h-[470px] flex items-center justify-center select-none group">
               
-              {/* Outer Orbit Guide Track - Clearly Visible Gold / Muted Accent with Subtle Glow */}
-              <div className="absolute inset-1 rounded-full border-2 border-dashed border-[#D6AD60]/55 shadow-[0_0_16px_rgba(214,173,96,0.18)] pointer-events-none" />
+              {/* Outer Orbit Guide Track - Clearly Visible Gold Accent with Luminous Glow */}
+              <div className="absolute inset-1 rounded-full border-2 border-dashed border-[#D6AD60]/80 shadow-[0_0_24px_rgba(214,173,96,0.28)] pointer-events-none" />
 
-              {/* Inner Orbit Guide Track - Clearly Visible Teal / Cyan Accent with Subtle Glow */}
-              <div className="absolute inset-12 sm:inset-14 md:inset-16 rounded-full border-2 border-dashed border-[#176B87]/50 shadow-[0_0_14px_rgba(23,107,135,0.16)] pointer-events-none" />
+              {/* Inner Orbit Guide Track - Clearly Visible Teal Accent with Luminous Glow */}
+              <div className="absolute inset-11 min-[390px]:inset-12 sm:inset-14 md:inset-16 rounded-full border-2 border-dashed border-[#176B87]/75 shadow-[0_0_20px_rgba(23,107,135,0.25)] pointer-events-none" />
 
               {/* ============================================================== */}
               {/* REVOLVING OUTER ORBIT (4 countries: USA, Canada, Australia, France) */}
@@ -203,7 +203,7 @@ export default function HeroSection() {
                     >
                       {/* Counter-rotation to keep badge upright as the orbit revolves */}
                       <div className="animate-counter-outer hover:[animation-play-state:paused]">
-                        <div className="flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-white shadow-md border border-slate-200/90 hover:border-[#D6AD60] hover:shadow-lg transition-all duration-200 cursor-pointer">
+                        <div className="flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-white/95 backdrop-blur-xs shadow-[0_2px_10px_rgba(214,173,96,0.20)] border border-[#D6AD60]/50 hover:border-[#D6AD60] hover:shadow-lg transition-all duration-200 cursor-pointer">
                           <img
                             src={c.flagImg}
                             alt={`${c.name} flag`}
@@ -222,7 +222,7 @@ export default function HeroSection() {
               {/* ============================================================== */}
               {/* REVOLVING INNER ORBIT (3 countries: India (featured), UK, Germany) */}
               {/* ============================================================== */}
-              <div className="absolute inset-12 sm:inset-14 md:inset-16 rounded-full animate-orbit-inner hover:[animation-play-state:paused] pointer-events-auto">
+              <div className="absolute inset-11 min-[390px]:inset-12 sm:inset-14 md:inset-16 rounded-full animate-orbit-inner hover:[animation-play-state:paused] pointer-events-auto">
                 {innerOrbitCountries.map((c) => {
                   const rad = (c.angle * Math.PI) / 180;
                   const radiusPct = 48; // percentage radius of inner container
@@ -239,8 +239,8 @@ export default function HeroSection() {
                       <div className="animate-counter-inner hover:[animation-play-state:paused]">
                         <div className={`flex items-center gap-1.5 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full shadow-md transition-all duration-200 cursor-pointer ${
                           c.highlight 
-                            ? 'bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-500 shadow-amber-200/50 hover:scale-105' 
-                            : 'bg-white border border-slate-200/90 hover:border-[#176B87]'
+                            ? 'bg-gradient-to-r from-amber-50 via-white to-orange-50 border-2 border-amber-500 shadow-[0_2px_12px_rgba(245,158,11,0.35)] ring-2 ring-amber-400/20 hover:scale-105' 
+                            : 'bg-white/95 backdrop-blur-xs border border-[#176B87]/50 shadow-[0_2px_10px_rgba(23,107,135,0.18)] hover:border-[#176B87]'
                         }`}>
                           <img
                             src={c.flagImg}

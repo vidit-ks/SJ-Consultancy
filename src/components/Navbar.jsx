@@ -16,7 +16,7 @@ export default function Navbar() {
       }
 
       // Check active section
-      const sections = ['hero', 'about', 'services', 'how-it-works', 'testimonials', 'destinations'];
+      const sections = ['hero', 'about', 'services', 'how-it-works'];
       const scrollPosition = window.scrollY + 120;
 
       for (const section of sections) {

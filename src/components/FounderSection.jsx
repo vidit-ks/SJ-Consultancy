@@ -6,8 +6,6 @@ import {
   MessageCircle, 
   Award, 
   Users, 
-  Sparkles, 
-  ShieldCheck,
   ArrowRight 
 } from 'lucide-react';
 import { BRAND } from '../data/consultancyData';
@@ -17,124 +15,110 @@ export default function FounderSection() {
   const founderChatUrl = BRAND.whatsapp.getUrl(whatsappFounderMsg);
 
   return (
-    <section id="about" className="py-20 md:py-28 bg-white relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-[#F5F7FA]/70 -skew-x-6 transform origin-top pointer-events-none" />
+    <section id="about" className="py-10 sm:py-14 md:py-16 bg-[#F5F7FA]/60 relative overflow-hidden">
+      {/* Background subtle decoration */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-white/60 -skew-x-6 transform origin-top pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-72 h-72 bg-[#176B87]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header Tag */}
-        <div className="text-center md:text-left mb-12 md:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#102A43]/5 border border-[#176B87]/20 text-[#102A43] text-xs font-semibold tracking-wide uppercase mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-[#D6AD60]" />
-            <span>Meet Our Founder</span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#102A43] tracking-tight">
-            Leadership Driven by Passion & Transparency
-          </h2>
-          <p className="mt-2 text-sm sm:text-base text-[#64748B] max-w-2xl">
-            6+ years of expertise, 1,000+ success stories, and an unwavering commitment to authentic student guidance.
-          </p>
-        </div>
-
         {/* Split Grid: Photo on one side, Intro on the other */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Founder Image Column */}
           <motion.div 
-            className="lg:col-span-5 order-2 lg:order-1 flex justify-center"
-            initial={{ opacity: 0, x: -30 }}
+            className="lg:col-span-5 flex justify-center"
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5 }}
           >
-            <div className="relative w-full max-w-md">
+            <div className="relative w-full max-w-[340px] sm:max-w-[370px]">
               
               {/* Offset decorative border/backdrop card */}
-              <div className="absolute -inset-3 sm:-inset-4 bg-gradient-to-tr from-[#102A43] via-[#176B87] to-[#D6AD60] rounded-3xl opacity-20 -rotate-2 transform transition-transform group-hover:rotate-0" />
-              <div className="absolute inset-0 bg-[#102A43] rounded-3xl shadow-xl transform rotate-1" />
+              <div className="absolute -inset-3 bg-gradient-to-tr from-[#102A43] via-[#176B87] to-[#D6AD60] rounded-3xl opacity-15 -rotate-2 transform pointer-events-none" />
+              <div className="absolute inset-0 bg-[#102A43] rounded-3xl shadow-lg transform rotate-1 pointer-events-none" />
 
-              {/* Founder Image Container */}
-              <div className="relative rounded-2xl overflow-hidden bg-slate-900 shadow-2xl border-2 border-white/20">
+              {/* Founder Image Container - Balanced Portrait Ratio */}
+              <div className="relative rounded-2xl overflow-hidden bg-slate-900 shadow-xl border-2 border-white/20 aspect-4/5">
                 <img
                   src={BRAND.founder.image}
                   alt="Shovik Julka - Founder & CEO of SJ Consultants"
-                  className="w-full h-auto object-cover object-top filter brightness-100 contrast-[1.02] transform transition-transform duration-500 hover:scale-[1.02]"
+                  className="w-full h-full object-cover object-top filter brightness-100 contrast-[1.02] transform transition-transform duration-500 hover:scale-[1.02]"
                   loading="lazy"
                 />
 
-                {/* Bottom Gradient Overlay for text badge */}
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#102A43] via-[#102A43]/70 to-transparent p-6 text-white text-left">
-                  <div className="text-xl sm:text-2xl font-bold tracking-tight text-white flex items-center justify-between">
+                {/* Bottom Overlay for Name & Title */}
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#102A43] via-[#102A43]/75 to-transparent p-5 text-white text-left">
+                  <div className="text-lg sm:text-xl font-bold tracking-tight text-white flex items-center justify-between">
                     <span>{BRAND.founder.name}</span>
-                    <span className="text-xs px-2.5 py-1 rounded-full bg-[#D6AD60] text-[#102A43] font-bold">
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#D6AD60] text-[#102A43] font-bold">
                       Founder
                     </span>
                   </div>
-                  <p className="text-xs sm:text-sm text-[#D6AD60] font-medium mt-0.5">
+                  <p className="text-xs text-[#D6AD60] font-semibold mt-0.5">
                     {BRAND.founder.role}
                   </p>
-                  <p className="text-[11px] sm:text-xs text-slate-300 mt-1">
+                  <p className="text-[11px] text-slate-300 mt-0.5">
                     {BRAND.founder.title}
                   </p>
                 </div>
               </div>
 
               {/* Floating Stat Card 1: Experience */}
-              <div className="absolute -top-4 -right-4 sm:-right-6 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#176B87]/10 flex items-center justify-center text-[#176B87]">
-                  <Award className="w-5 h-5 text-[#176B87]" />
+              <div className="absolute -top-3 -right-3 sm:-right-4 bg-white/95 backdrop-blur-md px-3 py-2 rounded-xl shadow-lg border border-slate-200/80 flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-lg bg-[#176B87]/10 flex items-center justify-center text-[#176B87]">
+                  <Award className="w-4 h-4 text-[#176B87]" />
                 </div>
                 <div>
-                  <div className="text-base font-extrabold text-[#102A43]">6+ Years</div>
-                  <div className="text-[11px] text-[#64748B] font-medium">Industry Expertise</div>
+                  <div className="text-xs sm:text-sm font-extrabold text-[#102A43]">6+ Years</div>
+                  <div className="text-[10px] text-[#64748B] font-medium leading-none">Experience</div>
                 </div>
               </div>
 
               {/* Floating Stat Card 2: Students Guided */}
-              <div className="absolute -bottom-4 -left-4 sm:-left-6 bg-[#102A43] text-white px-4 py-2.5 rounded-2xl shadow-xl border border-white/10 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#D6AD60]/20 flex items-center justify-center text-[#D6AD60]">
-                  <Users className="w-5 h-5 text-[#D6AD60]" />
+              <div className="absolute -bottom-3 -left-3 sm:-left-4 bg-[#102A43] text-white px-3.5 py-2 rounded-xl shadow-lg border border-white/10 flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-lg bg-[#D6AD60]/20 flex items-center justify-center text-[#D6AD60]">
+                  <Users className="w-4 h-4 text-[#D6AD60]" />
                 </div>
                 <div>
-                  <div className="text-base font-extrabold text-white">1,000+</div>
-                  <div className="text-[11px] text-slate-300 font-medium">Students Guided</div>
+                  <div className="text-xs sm:text-sm font-extrabold text-white">1,000+</div>
+                  <div className="text-[10px] text-slate-300 font-medium leading-none">Students Guided</div>
                 </div>
               </div>
 
             </div>
           </motion.div>
 
-          {/* Founder Introduction Text Column */}
+          {/* Founder Introduction Text Column - Refined & Balanced Typography */}
           <motion.div 
-            className="lg:col-span-7 order-1 lg:order-2 text-left"
-            initial={{ opacity: 0, x: 30 }}
+            className="lg:col-span-7 text-left"
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5 }}
           >
             {/* Header info */}
-            <div className="flex items-center gap-3 mb-4">
-              <span className="p-2 rounded-xl bg-[#176B87]/10 text-[#176B87]">
-                <Quote className="w-6 h-6 rotate-180" />
+            <div className="flex items-center gap-3 mb-3.5">
+              <span className="p-1.5 rounded-lg bg-[#176B87]/10 text-[#176B87]">
+                <Quote className="w-5 h-5 rotate-180" />
               </span>
               <div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-[#102A43]">
+                <h3 className="text-xl sm:text-2xl font-extrabold text-[#102A43]">
                   {BRAND.founder.name}
                 </h3>
-                <p className="text-sm font-semibold text-[#176B87]">
+                <p className="text-xs sm:text-sm font-semibold text-[#176B87]">
                   {BRAND.founder.role}
                 </p>
-                <p className="text-xs text-[#64748B]">
+                <p className="text-[11px] text-[#64748B]">
                   {BRAND.founder.title}
                 </p>
               </div>
             </div>
 
-            {/* Complete, authentic introduction text */}
-            <div className="space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
-              <p className="font-medium text-[#102A43]">
+            {/* Complete, refined introduction text */}
+            <div className="space-y-2.5 text-slate-700 text-xs sm:text-sm leading-relaxed">
+              <p className="font-semibold text-[#102A43]">
                 "I'm Shovik Julka, Founder and CEO of SJ Consultants, with over 6 years of experience in the education and overseas consultancy industry.
               </p>
 
@@ -159,37 +143,37 @@ export default function FounderSection() {
               </p>
 
               {/* Callout Quote */}
-              <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#102A43]/5 via-[#176B87]/5 to-transparent border-l-4 border-[#D6AD60] my-5">
-                <p className="text-base sm:text-lg font-bold text-[#102A43] italic">
+              <div className="p-3 sm:p-3.5 rounded-xl bg-gradient-to-r from-[#102A43]/5 via-[#176B87]/5 to-transparent border-l-3 border-[#D6AD60] my-3">
+                <p className="text-xs sm:text-sm font-bold text-[#102A43] italic">
                   "Because every student has a dream, and the right guidance can make all the difference."
                 </p>
               </div>
             </div>
 
             {/* Key Value Points */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 my-6 pt-4 border-t border-slate-100">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 my-4 pt-3 border-t border-slate-200/70">
               <div className="flex items-start gap-2">
-                <CheckCircle className="w-4 h-4 text-[#176B87] shrink-0 mt-0.5" />
-                <span className="text-xs font-semibold text-slate-800">Direct 1-on-1 Mentorship</span>
+                <CheckCircle className="w-3.5 h-3.5 text-[#176B87] shrink-0 mt-0.5" />
+                <span className="text-xs font-semibold text-slate-800">1-on-1 Mentorship</span>
               </div>
               <div className="flex items-start gap-2">
-                <CheckCircle className="w-4 h-4 text-[#176B87] shrink-0 mt-0.5" />
+                <CheckCircle className="w-3.5 h-3.5 text-[#176B87] shrink-0 mt-0.5" />
                 <span className="text-xs font-semibold text-slate-800">100% Ethical Advice</span>
               </div>
               <div className="flex items-start gap-2">
-                <CheckCircle className="w-4 h-4 text-[#176B87] shrink-0 mt-0.5" />
+                <CheckCircle className="w-3.5 h-3.5 text-[#176B87] shrink-0 mt-0.5" />
                 <span className="text-xs font-semibold text-slate-800">End-to-End Handholding</span>
               </div>
             </div>
 
             {/* Signature & CTA Area */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 pt-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
               <div>
-                <div className="font-serif text-2xl font-bold tracking-tight text-[#102A43] italic">
+                <div className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#102A43] italic">
                   Shovik Julka
                 </div>
-                <div className="text-xs text-[#64748B] font-medium">
-                  Founder & CEO | SJ Consultants
+                <div className="text-[11px] text-[#64748B] font-medium">
+                  Founder &amp; CEO | SJ Consultants
                 </div>
               </div>
 
@@ -197,11 +181,11 @@ export default function FounderSection() {
                 href={founderChatUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 bg-[#102A43] hover:bg-[#176B87] text-white text-sm font-semibold px-5 py-3 rounded-full transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 bg-[#102A43] hover:bg-[#176B87] text-white text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5"
               >
                 <MessageCircle className="w-4 h-4 text-[#25D366]" />
                 <span>Consult with Shovik Julka</span>
-                <ArrowRight className="w-4 h-4 text-[#D6AD60]" />
+                <ArrowRight className="w-3.5 h-3.5 text-[#D6AD60]" />
               </a>
             </div>
 
@@ -212,4 +196,3 @@ export default function FounderSection() {
     </section>
   );
 }
-

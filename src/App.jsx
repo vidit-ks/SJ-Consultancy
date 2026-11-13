@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
+import LeadershipHighlight from './components/LeadershipHighlight';
 import FounderSection from './components/FounderSection';
 import ServicesSection from './components/ServicesSection';
 import HowItWorksSection from './components/HowItWorksSection';
@@ -20,7 +21,10 @@ export default function App() {
         {/* Section 1: Hero / Landing */}
         <HeroSection />
 
-        {/* Section 2: Founder Introduction */}
+        {/* Leadership Highlight Section Bridge */}
+        <LeadershipHighlight />
+
+        {/* Section 2: Founder Introduction (About Us) */}
         <FounderSection />
 
         {/* Section 3: End-to-End Services */}

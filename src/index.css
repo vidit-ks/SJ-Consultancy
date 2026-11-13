@@ -100,3 +100,50 @@ h1, h2, h3, h4, h5, h6 {
 .animate-pulse-subtle {
   animation: pulse-subtle 3s ease-in-out infinite;
 }
+
+/* Solar System Orbital Revolution */
+@keyframes solar-orbit-clockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes solar-orbit-counter {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-orbit-inner {
+  animation: solar-orbit-clockwise 34s linear infinite;
+}
+
+.animate-counter-inner {
+  animation: solar-orbit-counter 34s linear infinite;
+}
+
+.animate-orbit-outer {
+  animation: solar-orbit-counter 46s linear infinite;
+}
+
+.animate-counter-outer {
+  animation: solar-orbit-clockwise 46s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-orbit-inner,
+  .animate-counter-inner,
+  .animate-orbit-outer,
+  .animate-counter-outer,
+  .animate-float-slow,
+  .animate-float-delayed,
+  .animate-pulse-subtle {
+    animation: none !important;
+  }
+}

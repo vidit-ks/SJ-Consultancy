@@ -149,7 +149,7 @@ export default function TestimonialsSection() {
           </div>
           <div className="bg-white p-3 sm:p-3.5 rounded-xl border border-slate-200/80 text-center shadow-2xs">
             <Sparkles className="w-4 h-4 text-[#D6AD60] mx-auto mb-1" />
-            <div className="text-base sm:text-lg font-extrabold text-[#102A43]">10+ Key</div>
+            <div className="text-base sm:text-lg font-extrabold text-[#102A43]">12+ Key</div>
             <div className="text-[11px] text-[#64748B]">Destinations</div>
           </div>
         </div>

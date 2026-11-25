@@ -149,7 +149,7 @@ export const HOW_IT_WORKS_STEPS = [
   },
 ];
 
-// 10 Countries for Destination Showcase
+// 12 Countries for Destination Showcase
 export const DESTINATIONS = [
   {
     name: "United States",
@@ -231,6 +231,22 @@ export const DESTINATIONS = [
     popularUniversities: "Auckland, Otago, Victoria",
     whatsappQuery: "Hello SJ Consultants, I am interested in studying in New Zealand. Please guide me about the available opportunities.",
   },
+  {
+    name: "Sweden",
+    flag: "🇸🇪",
+    flagImg: "/assets/flags/se.png",
+    code: "SWE",
+    popularUniversities: "KTH Royal Institute, Lund, Uppsala",
+    whatsappQuery: "Hello SJ Consultants, I am interested in studying in Sweden. Please guide me about the available opportunities.",
+  },
+  {
+    name: "Italy",
+    flag: "🇮🇹",
+    flagImg: "/assets/flags/it.png",
+    code: "ITA",
+    popularUniversities: "Politecnico di Milano, Bologna, Sapienza",
+    whatsappQuery: "Hello SJ Consultants, I am interested in studying in Italy. Please guide me about the available opportunities.",
+  },
 ];
 
 // Top Global Universities Showcase (AdmitKard reference with authentic logo assets)
@@ -251,61 +267,61 @@ export const TESTIMONIAL_PLACEHOLDERS = [
   {
     id: 1,
     studentTag: "Verified Student Profile",
-    namePlaceholder: "Student Mentee – Fall Cohort",
+    namePlaceholder: "Aarav Sharma",
     targetCountry: "United Kingdom",
     flagImg: "/assets/flags/gb.png",
     coursePlaceholder: "MSc in Advanced Computer Science",
     quote: "Working with SJ Consultants made my dream of studying in the UK feel completely achievable. Shovik sir provided clear, honest advice right from course selection to SOP drafting and visa clearance without false promises.",
     rating: 5,
     highlight: "Admission & Visa Guidance",
-    initials: "SC",
+    initials: "AS",
   },
   {
     id: 2,
     studentTag: "Verified Student Profile",
-    namePlaceholder: "Student Mentee – Spring Intake",
+    namePlaceholder: "Ananya Verma",
     targetCountry: "United States",
     flagImg: "/assets/flags/us.png",
     coursePlaceholder: "Master of Science in Data Analytics",
     quote: "The personalized attention was remarkable. When other agencies gave generic university lists, SJ Consultants took time to assess my actual profile, work experience, and financial plan to recommend the best programs.",
     rating: 5,
     highlight: "Profile Evaluation & Strategy",
-    initials: "RK",
+    initials: "AV",
   },
   {
     id: 3,
     studentTag: "Verified Student Profile",
-    namePlaceholder: "Student Mentee – Fall Intake",
+    namePlaceholder: "Rohan Mehta",
     targetCountry: "Canada",
     flagImg: "/assets/flags/ca.png",
     coursePlaceholder: "Post-Graduate Diploma in Project Management",
     quote: "From initial confusion to holding my student permit, the end-to-end guidance was flawless. The transparency regarding costs, documentation, and mock visa preparation removed every bit of stress for my family.",
     rating: 5,
     highlight: "End-to-End Visa Filing",
-    initials: "AM",
+    initials: "RM",
   },
   {
     id: 4,
     studentTag: "Verified Student Profile",
-    namePlaceholder: "Student Mentee – Summer Cohort",
+    namePlaceholder: "Aditya Kulkarni",
     targetCountry: "Germany",
     flagImg: "/assets/flags/de.png",
     coursePlaceholder: "MSc in Automotive Systems Engineering",
     quote: "Navigating public universities in Germany seemed daunting with strict APS and language requirements. SJ Consultants broke the entire process into 6 simple stages and guided me through every documentation requirement.",
     rating: 5,
     highlight: "Public University Guidance",
-    initials: "TD",
+    initials: "AK",
   },
   {
     id: 5,
     studentTag: "Verified Student Profile",
-    namePlaceholder: "Student Mentee – Autumn Intake",
+    namePlaceholder: "Priya Nair",
     targetCountry: "Australia",
     flagImg: "/assets/flags/au.png",
     coursePlaceholder: "Master of Information Technology",
     quote: "Transparent, responsive, and genuinely invested in student outcomes. The scholarship guidance alone helped reduce my tuition fees significantly. Highly recommend SJ Consultants to any student planning abroad.",
     rating: 5,
     highlight: "Scholarship & Admission",
-    initials: "VR",
+    initials: "PN",
   },
 ];

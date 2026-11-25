@@ -23,50 +23,50 @@ export default function DestinationsSection() {
             Your World of Opportunities
           </h2>
           <p className="mt-3 text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed">
-            Explore 10 premier global education destinations and discover universities that match your ambitions.
+            Explore 12 premier global education destinations and discover universities that match your ambitions.
           </p>
         </div>
 
-        {/* 10 Compact Country Cards: 5 cols on desktop (2 rows of 5), 3 on tablet, 2 on mobile */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 mb-10">
+        {/* 12 Compact Country Cards: 6 cols on desktop/laptop (2 rows of 6), 3-4 on tablet, 2 on mobile (6 rows of 2) */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2.5 sm:gap-3 xl:gap-3.5 mb-10">
           {DESTINATIONS.map((dest) => (
             <div
               key={dest.code}
-              className="group relative bg-white hover:bg-slate-50/95 rounded-2xl p-3.5 sm:p-4 text-[#102A43] shadow-lg hover:shadow-2xl transition-all duration-200 hover:-translate-y-1 border border-white/20 hover:border-[#D6AD60]/80 flex flex-col justify-between select-none"
+              className="group relative bg-white hover:bg-slate-50/95 rounded-2xl p-3 sm:p-3.5 text-[#102A43] shadow-lg hover:shadow-2xl transition-all duration-200 hover:-translate-y-1 border border-white/20 hover:border-[#D6AD60]/80 flex flex-col justify-between select-none"
             >
               <div>
                 {/* Flag & Category Top Row */}
-                <div className="flex items-center justify-between mb-2.5">
-                  <div className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-center p-1 shadow-2xs group-hover:scale-105 transition-transform duration-200">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="w-8 h-8 rounded-lg bg-slate-50 border border-slate-200/80 flex items-center justify-center p-1 shadow-2xs group-hover:scale-105 transition-transform duration-200">
                     <img
                       src={dest.flagImg}
                       alt={`${dest.name} flag`}
-                      className="w-full h-full object-cover rounded-lg shadow-2xs"
+                      className="w-full h-full object-cover rounded shadow-2xs"
                     />
                   </div>
 
-                  <span className="text-[10px] font-mono font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded">
+                  <span className="text-[10px] font-mono font-bold text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded">
                     {dest.code}
                   </span>
                 </div>
 
                 {/* Country Name */}
-                <h3 className="text-sm sm:text-base font-bold text-[#102A43] group-hover:text-[#176B87] transition-colors mb-1 leading-snug">
+                <h3 className="text-xs sm:text-sm font-bold text-[#102A43] group-hover:text-[#176B87] transition-colors mb-1 leading-snug truncate">
                   {dest.name}
                 </h3>
 
                 {/* Status / Category Highlight Badge */}
-                <div className="inline-flex items-center gap-1 text-[10px] font-bold text-[#176B87] bg-[#176B87]/10 px-1.5 py-0.5 rounded mb-2.5">
+                <div className="inline-flex items-center gap-1 text-[9px] sm:text-[10px] font-bold text-[#176B87] bg-[#176B87]/10 px-1.5 py-0.5 rounded mb-2">
                   <GraduationCap className="w-2.5 h-2.5" />
                   <span>Top Hub</span>
                 </div>
 
                 {/* Popular Universities */}
-                <div className="pt-2 border-t border-slate-100">
+                <div className="pt-1.5 border-t border-slate-100">
                   <span className="text-[9px] uppercase font-bold tracking-wider text-slate-400 block mb-0.5">
                     Popular:
                   </span>
-                  <p className="text-[11px] sm:text-xs text-slate-600 font-medium leading-tight line-clamp-2">
+                  <p className="text-[10px] sm:text-[11px] text-slate-600 font-medium leading-tight line-clamp-2">
                     {dest.popularUniversities}
                   </p>
                 </div>

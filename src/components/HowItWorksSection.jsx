@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Sparkles, 
@@ -92,6 +92,48 @@ const stepThemes = [
 export default function HowItWorksSection() {
   const whatsappUrl = BRAND.whatsapp.getUrl("Hello SJ Consultants, I am ready to start my study abroad journey!");
 
+  const timelineRef = useRef(null);
+  const firstIconRef = useRef(null);
+  const lastIconRef = useRef(null);
+  const [lineStyle, setLineStyle] = useState({ top: 24, height: 0, left: 32 });
+
+  // Measure exact vertical line from center of Step 1 to center of Step 6 on mobile
+  useEffect(() => {
+    const updateLine = () => {
+      if (timelineRef.current && firstIconRef.current && lastIconRef.current) {
+        const containerRect = timelineRef.current.getBoundingClientRect();
+        const firstRect = firstIconRef.current.getBoundingClientRect();
+        const lastRect = lastIconRef.current.getBoundingClientRect();
+
+        const top = (firstRect.top + firstRect.height / 2) - containerRect.top;
+        const bottom = (lastRect.top + lastRect.height / 2) - containerRect.top;
+        const left = (firstRect.left + firstRect.width / 2) - containerRect.left;
+
+        setLineStyle({
+          top: Math.round(top),
+          height: Math.max(0, Math.round(bottom - top)),
+          left: Math.round(left)
+        });
+      }
+    };
+
+    updateLine();
+    const timer = setTimeout(updateLine, 80);
+
+    let resizeObserver;
+    if (typeof ResizeObserver !== 'undefined' && timelineRef.current) {
+      resizeObserver = new ResizeObserver(updateLine);
+      resizeObserver.observe(timelineRef.current);
+    }
+
+    window.addEventListener('resize', updateLine);
+    return () => {
+      clearTimeout(timer);
+      if (resizeObserver) resizeObserver.disconnect();
+      window.removeEventListener('resize', updateLine);
+    };
+  }, []);
+
   return (
     <section id="how-it-works" className="py-20 md:py-28 bg-white relative overflow-hidden">
       {/* Decorative gradient accents */}
@@ -162,9 +204,17 @@ export default function HowItWorksSection() {
         </div>
 
         {/* Mobile & Tablet Vertical Connected Timeline */}
-        <div className="lg:hidden relative">
-          {/* Vertical connecting line */}
-          <div className="absolute top-6 bottom-6 left-6 w-0.5 bg-gradient-to-b from-amber-400 via-teal-400 to-rose-400 opacity-30 pointer-events-none" />
+        <div ref={timelineRef} className="lg:hidden relative">
+          {/* Vertical connecting line - accurately starts at center of Step 1 icon and ends at center of Step 6 icon */}
+          <div 
+            className="absolute w-0.5 bg-gradient-to-b from-amber-400 via-teal-400 to-rose-400 opacity-40 pointer-events-none -translate-x-1/2"
+            style={{
+              top: `${lineStyle.top}px`,
+              height: `${lineStyle.height}px`,
+              left: `${lineStyle.left}px`,
+              display: lineStyle.height > 0 ? 'block' : 'none'
+            }}
+          />
 
           <div className="space-y-5 relative">
             {HOW_IT_WORKS_STEPS.map((step, idx) => {
@@ -177,7 +227,10 @@ export default function HowItWorksSection() {
                   className="flex items-start gap-3.5 relative pl-2 group"
                 >
                   {/* Step Node */}
-                  <div className="relative shrink-0 z-10">
+                  <div 
+                    ref={idx === 0 ? firstIconRef : idx === HOW_IT_WORKS_STEPS.length - 1 ? lastIconRef : null}
+                    className="relative shrink-0 z-10"
+                  >
                     <div className={`w-12 h-12 rounded-xl ${theme.bgGradient} border-2 ${theme.borderColor} ${theme.iconRing} shadow-md flex items-center justify-center`}>
                       <Icon className={`w-5 h-5 ${theme.iconColor}`} />
                     </div>
